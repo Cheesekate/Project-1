@@ -14,7 +14,7 @@ When I hit SUBMIT
 The computer will RENDER a list of EVENTS, a MAP, and the WEATHER
 So I can find out what is PoppIn in any city.
 
-DE
+Details:
 For this project, Danny, Marcus, Logan and Kate will work collaborativilty to create an online app to help users find local events. We have broken up into two teams, a front end consisting of Marcus and Danny and the back end team, Logan and Kate.
 
 Our application will be created for mobile devices and desktop friendly, with three API functions, one for pulling events, a map API, and weather API.
