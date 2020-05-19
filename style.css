@@ -1,0 +1,11 @@
+.ftr{
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+    color: white;
+    background-color: black;
+    height: 6rem;
+    width: 100%;
+    text-align: center;
+    padding-top: 2rem;
+}
