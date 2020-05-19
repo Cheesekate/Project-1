@@ -10,4 +10,29 @@ body, html{
 
 .nav-wrapper{
     background-color: black;
+
 }
+.main {
+    margin-left: 3rem;
+    }
+    
+    .ftr {
+        background-color: black; 
+        position: fixed; 
+        bottom: 0; 
+        color: white; 
+        height: 6rem; 
+        width: 100%; 
+        text-align: center; 
+        padding-top: 20px;
+    }
+    
+    .leftCol {
+        height: 10rem; 
+        border: solid black; 
+        background-color: grey;
+        margin: 3rem;
+        margin-left: 3rem;
+        border-radius: 10px;
+        padding: 3rem;
+    }
