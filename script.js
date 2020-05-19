@@ -1,13 +1,4 @@
-$(function() {
-    $(window).scroll(function() {
-      var winTop = $(window).scrollTop();
-      if (winTop >= 30) {
-        $("body").addClass("sticky-shrinknav-wrapper");
-      } else{
-        $("body").removeClass("sticky-shrinknav-wrapper");
-      }
-    });
-  });
+
   
   
 //Back-end code playground kicks in here:
@@ -21,9 +12,9 @@ var exampleLat = "33.4582"
 var exampleLong = "-112.0691"
 
 
-$.ajax({
-    url: queryURL,
-    method: "GET",
-  }).then(function (response) {
-    console.log(response);
-});
+// $.ajax({
+//     url: queryURL,
+//     method: "GET",
+//   }).then(function (response) {
+//     console.log(response);
+// });
