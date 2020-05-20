@@ -1,51 +1,78 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"  media="screen,projection"/>
-      <link rel="stylesheet" href="style.css">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-      <nav>
-        <div class="nav-wrapper">
-          <a href="#!" class="brand-logo center"><strong>What's Poppin!</strong></a>
-        </div>
-      </nav> 
-
-      <main class="main">
-        <!-- start header -->
-        <header class="row">
-          <div id= "header"></div>
-        </header>
-        <!-- close header -->
-        
-        <!-- start main -->
-        <div class="row ">
-          <!-- start input col -->
-          <div class="col s4 leftCol" id="leftCol">
-            <input type="input" >
-            <button id="search"></button>
-          </div>
-          <!-- close input col -->
-          
-          <div class="col s1"></div>
-          
-          <!-- start output col -->
-          <div class="col s7 rightCol" id="rightCol"></div>
-          <!-- close output col -->
-        </div>
-        <!-- close main -->
-      </main>
-
-      <div class="ftr" id="ftr">
-        <p>&copy; 2020 What's PoppIn!</p>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+      media="screen,projection"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <h2 class="center-align"><strong>What's Poppin!</strong></h2>
       </div>
-        
-      <!--JavaScript at end of body for optimized loading-->
-      <script type="text/javascript" src="script.js"></script>
-    </body>
-  </html>
+    </nav>
 
+    <main class="main">
+      <!-- start header -->
+      <header class="row">
+        <div id="header"></div>
+      </header>
+      <!-- close header -->
+
+      <!-- start main -->
+      <div class="row">
+        <!-- start input col -->
+        <div class="col l4 leftCol" id="leftCol">
+          <input type="input" />
+          <a class="btn-floating pulse"><i class="material-icons">search</i></a>
+        </div>
+        <!-- close input col -->
+
+        <div class="col l1"></div>
+
+        <!-- start output col -->
+        <div class="col teal l7 rightCol" id="rightCol">
+          <!-- Modal Trigger -->
+          <button data-target="modal1" class="btn pulse modal-trigger"><span class="material-icons">
+            location_on
+            </span></button>
+          
+
+          <!-- Modal Structure -->
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h4>Map view</h4>
+              <p>map view goes here!!!</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+                >Agree</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- close output col -->
+      </div>
+      <!-- close main -->
+    </main>
+
+    <div class="ftr" id="ftr">
+      <p>&copy; 2020 What's PoppIn!</p>
+    </div>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
