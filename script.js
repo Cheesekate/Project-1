@@ -1,11 +1,8 @@
 
-<<<<<<< HEAD
 
 
-=======
   
   
->>>>>>> c17f85f90460d06d1eba88c504656eed88ea3538
 //Back-end code playground kicks in here:
 
 var APIKey = "qdZu7Y7hMt3KGPxrdiPLP6B4TNiFoYZC";

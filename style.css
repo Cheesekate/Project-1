@@ -1,38 +1,63 @@
 body, html{
     height: 100%;
     margin: 0;
-    
     background-image: url(https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}     
+ 
+nav{
+    background-color: black;
+    opacity: .7;
+}
+
+input{
+    margin-top: 25px;
+    border-top-width: 5px;
+    border-bottom-width: 7px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.waves-effect{
+    background-color: rgb(7, 247, 19);
+    color: black;
+}
+
+.main {
+    margin-left: 15px;
+}    
+    
+.ftr {
+    background-color: black;
+    opacity: .5; 
+    position: fixed; 
+    bottom: 0; 
+    color: white; 
+    height: 3rem; 
+    width: 100%; 
+    text-align: center; 
+    padding-top: 0;
 }    
 
-.nav-wrapper{
-    background-color: black;
-
-}
-.main {
-    margin-left: 3rem;
-    }
+.leftCol {
+    height: 10rem; 
+    /* border: solid black;  */
+    background-color: rgb(240, 81, 218);
+    opacity: .7;
+    margin: 3rem;
+    border-radius: 10px;
+    padding: 3rem;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
     
-    .ftr {
-        background-color: black; 
-        position: fixed; 
-        bottom: 0; 
-        color: white; 
-        height: 6rem; 
-        width: 100%; 
-        text-align: center; 
-        padding-top: 20px;
-    }
+}    
     
-    .leftCol {
-        height: 10rem; 
-        border: solid black; 
-        background-color: grey;
-        margin: 3rem;
-        margin-left: 3rem;
-        border-radius: 10px;
-        padding: 3rem;
-    }
+    
+    
+    
+    
