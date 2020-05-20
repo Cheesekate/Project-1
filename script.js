@@ -92,6 +92,7 @@ $("#searchBtn").on("click", function (response){
       var queryURL = "https://app.ticketmaster.com/discovery/v2/events/" + eventid + ".json?apikey=" + APIKey;
       var lat = 0;
       var lon = 0;
+      var weatherDate = ""
       console.log(queryURL);
       $.ajax({
           url: queryURL,
@@ -109,8 +110,15 @@ $("#searchBtn").on("click", function (response){
             console.log("N/A"); //Output this to the time spot.
           }
           else{
-            console.log(response.dates.start.localTime); //Event start time on 24 hour clock - moment.js may translate?
-            console.log(response.dates.start.localDate); 
+            var hour = response.dates.start.localTime.split(":")[0];
+            var minute = response.dates.start.localTime.split(":")[1];
+              if (hour > 12) {
+                 hour = hour - 12 + ":" + minute + "PM";
+              } else {
+                hour = hour + ":" + minute + " AM";
+              }
+              console.log("Time: " + hour); //Event start time, translated to AM/PM
+            console.log(response.dates.start.localDate); //Re-call may not be necessary. 
           }
 
           //This is the initial Weathermap call zone.
