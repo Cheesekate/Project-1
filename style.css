@@ -54,7 +54,7 @@ h2{
     /* border: solid black;  */
     /* background-color: rgb(240, 81, 218); */
     /* background-image: linear-gradient(to right, rgb(240, 81, 218), rgb(245, 236, 115) , teal); */
-    background-image: url(https://media0.giphy.com/media/Y2yw4LubyRCV6aphtj/giphy.gif?cid=ecf05e470c5fe95c28d66690683ac7d0ad76c74c8ad20b51&rid=giphy.gif);
+    background-image: url(https://media3.giphy.com/media/1kTUjHlD4SVf2lut1u/giphy.gif?cid=ecf05e47e82602752946d5c0a355aad3d978d72377fe3ee3&rid=giphy.gif);
     opacity: .7;
     margin: 0;
     border-radius: 10px;
@@ -70,22 +70,22 @@ h2{
 .rightCol{
     height: 84vh; 
     /* border: solid black;  */
-    /* background-color: rgb(240, 81, 218); */
-    background-image: linear-gradient(to right, rgb(87, 240, 95), teal , rgb(38, 23, 247)); 
+     background-image: black;
+    /* background-image: linear-gradient(to right, rgb(87, 240, 1), teal , rgb(38, 23, 247));   */
     opacity: .7;
     margin: 3rem;
     border-radius: 10px;
     padding: 3rem;
-    margin-top: 0px;
+    margin-top: 30px;
     margin-right: 0px;
     margin-bottom: 0px;
     padding-left: 0px;
     padding-right: 0px;
 }    
 
-.materials-icons{
-    background-color: rgb(38, 23, 247);
-    color: black;
+.pulse2{
+    background-color: rgb(64, 175, 69);
+    color: #000000;
 } 
 
 .inputDiv {
@@ -103,6 +103,7 @@ h2{
 
     
 .card{
+    border-radius: 10px;
     margin-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
