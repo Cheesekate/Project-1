@@ -85,9 +85,18 @@ input{
     background-color: rgb(38, 23, 247);
     color: black;
 } 
+
+
+.input {
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 1rem;
+
     
 .card{
     margin-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
+
 }
