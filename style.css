@@ -22,7 +22,8 @@ h2{
     background-color: rgb(245, 236, 115);
 }
 
-input{
+.input{
+    flex:1;
     margin-top: 25px;
     border-top-width: 5px;
     border-bottom-width: 7px;
@@ -48,18 +49,19 @@ input{
 }    
 
 .leftCol {
-    height: 20vh; 
+    /* height: 120px;  */
     /* height: auto; change to auto when search button starts working */
     /* border: solid black;  */
     /* background-color: rgb(240, 81, 218); */
-    background-image: linear-gradient(to right, rgb(240, 81, 218), rgb(245, 236, 115) , teal);
+    /* background-image: linear-gradient(to right, rgb(240, 81, 218), rgb(245, 236, 115) , teal); */
+    background-image: url(https://media0.giphy.com/media/Y2yw4LubyRCV6aphtj/giphy.gif?cid=ecf05e470c5fe95c28d66690683ac7d0ad76c74c8ad20b51&rid=giphy.gif);
     opacity: .7;
     margin: 0;
     border-radius: 10px;
     padding: 3rem;
     margin-top: 0px;
     margin-right: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     padding-left: 0px;
     padding-right: 0px;
     
@@ -86,12 +88,18 @@ input{
     color: black;
 } 
 
+.inputDiv {
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
 
 .input {
     border-radius: 10px;
     font-size: 24px;
     font-weight: bold;
     padding-left: 1rem;
+    width: 100%;
+}
 
     
 .card{
