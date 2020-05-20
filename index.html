@@ -34,8 +34,10 @@
       <div class="row">
         <!-- start input col -->
         <div class="col s12 m12 l4 leftCol" id="leftCol">
+
           <input type="input" id="searchbox" />
-          <a class="btn-floating pulse" id="searchBtn"><i class="material-icons">search</i></a>
+          <a class="btn-floating pulse"><i class="material-icons black-text">search</i></a>
+
         </div>
         <!-- close input col -->
 
@@ -43,13 +45,14 @@
 
         <!-- start output col -->
         <div class="col teal s12 m12 l7 rightCol" id="rightCol">
-          <div class="card blue-grey darken-1">
+          <div class="card blue-grey z-depth-5">
             <div class="card content black-text">
               <span class="card-title">Events</span>
+              <a data-target="modal1" class="btn-floating modal-trigger pulse halfway-fab waves-effect waves-light teal"><i class="material-icons">location_on</i></a>
               <!-- Modal Trigger -->
-              <button data-target="modal1" class="btn pulse modal-trigger"><span class="material-icons">
+              <!-- <button data-target="modal1" class="btn pulse modal-trigger"><span class="material-icons">
                 location_on
-                </span></button>
+                </span></button> -->
             </div>  
           </div>  
           
@@ -63,7 +66,7 @@
             </div>
             <div class="modal-footer">
               <a href="#!" class="modal-close waves-effect waves-green btn-flat"
-                >Agree</a
+                >Close</a
               >
             </div>
           </div>
