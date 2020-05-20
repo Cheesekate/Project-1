@@ -10,6 +10,12 @@ body, html{
 nav{
     background-color: black;
     opacity: .7;
+    
+    
+}
+
+h2{
+    margin-top: 0px;
 }
 
 input{
@@ -44,7 +50,8 @@ input{
 .leftCol {
     height: 10rem; 
     /* border: solid black;  */
-    background-color: rgb(240, 81, 218);
+    /* background-color: rgb(240, 81, 218); */
+    background-image: linear-gradient(to right, rgb(240, 81, 218) , teal);
     opacity: .7;
     margin: 3rem;
     border-radius: 10px;
@@ -57,7 +64,23 @@ input{
     
 }    
     
+.rightCol{
+    height: 10rem; 
+    /* border: solid black;  */
+    /* background-color: rgb(240, 81, 218); */
+    background-image: linear-gradient(to right, teal , rgb(38, 23, 247));
+    opacity: .7;
+    margin: 3rem;
+    border-radius: 10px;
+    padding: 3rem;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
     
+
+} 
     
     
     
