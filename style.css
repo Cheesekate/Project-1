@@ -33,11 +33,7 @@ input{
 .materials-icon{
     background-color: teal;
     color: black;
-}
-
-.main {
-    margin-left: 15px;
-}    
+} 
     
 .ftr {
     background-color: black;
@@ -52,12 +48,13 @@ input{
 }    
 
 .leftCol {
-    height: 10rem; 
+    height: 20vh; 
+    /* height: auto; change to auto when search button starts working */
     /* border: solid black;  */
     /* background-color: rgb(240, 81, 218); */
     background-image: linear-gradient(to right, rgb(240, 81, 218) , teal);
     opacity: .7;
-    margin: 3rem;
+    margin: 0;
     border-radius: 10px;
     padding: 3rem;
     margin-top: 0px;
@@ -69,7 +66,7 @@ input{
 }    
     
 .rightCol{
-    height: 10rem; 
+    height: 84vh; 
     /* border: solid black;  */
     /* background-color: rgb(240, 81, 218); */
     background-image: linear-gradient(to right, teal , rgb(38, 23, 247));
