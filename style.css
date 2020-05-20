@@ -86,4 +86,10 @@ input{
     margin-top: 50px;
     margin-left: 50px;
 } 
-    
+
+.input {
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 1rem;
+}
