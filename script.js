@@ -14,14 +14,15 @@ $("#searchBtn").on("click", function (response){
   //const statepass = $("#statebox").val(); //ID of the state entry goes here. Generally appears to require full name, but also doens't seem to work 100%.
   var lat = 0;
   var lon = 0;
-  cityPull(citypass, statepass);
+  cityPull(citypass);
   });
   
-  function cityPull(cityname, cityState){
+  function cityPull(cityname){
       //This is the initial Weathermap call zone.
       var city = cityname;
       var APIKey = "c0708fd314d4abadfb6401261f72c41f";
-      var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + cityname + "&" + cityState + "&units=imperial&appid=" + APIKey;
+      var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + cityname + "&units=imperial&appid=" + APIKey;
+      //var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + cityname + "&" + cityState + "&units=imperial&appid=" + APIKey;
       var lat = 0;
       var lon = 0;
   
