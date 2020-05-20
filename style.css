@@ -19,7 +19,7 @@ h2{
 }
 
 .btn-floating{
-    background-color: rgb(240, 81, 218);
+    background-color: rgb(245, 236, 115);
 }
 
 input{
@@ -52,7 +52,7 @@ input{
     /* height: auto; change to auto when search button starts working */
     /* border: solid black;  */
     /* background-color: rgb(240, 81, 218); */
-    background-image: linear-gradient(to right, rgb(240, 81, 218) , teal);
+    background-image: linear-gradient(to right, rgb(240, 81, 218), rgb(245, 236, 115) , teal);
     opacity: .7;
     margin: 0;
     border-radius: 10px;
@@ -69,7 +69,7 @@ input{
     height: 84vh; 
     /* border: solid black;  */
     /* background-color: rgb(240, 81, 218); */
-    background-image: linear-gradient(to right, teal , rgb(38, 23, 247));
+    background-image: linear-gradient(to right, rgb(87, 240, 95), teal , rgb(38, 23, 247)); 
     opacity: .7;
     margin: 3rem;
     border-radius: 10px;
@@ -81,9 +81,13 @@ input{
     padding-right: 0px;
 }    
 
-.btn{
+.materials-icons{
     background-color: rgb(38, 23, 247);
-    margin-top: 50px;
-    margin-left: 50px;
+    color: black;
 } 
     
+.card{
+    margin-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
