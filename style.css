@@ -18,6 +18,10 @@ h2{
     margin-top: 0px;
 }
 
+.btn-floating{
+    background-color: rgb(240, 81, 218);
+}
+
 input{
     margin-top: 25px;
     border-top-width: 5px;
@@ -26,8 +30,8 @@ input{
     padding-bottom: 0;
 }
 
-.waves-effect{
-    background-color: rgb(7, 247, 19);
+.materials-icon{
+    background-color: teal;
     color: black;
 }
 
@@ -78,9 +82,11 @@ input{
     margin-bottom: 0px;
     padding-left: 0px;
     padding-right: 0px;
-    
+}    
 
+.btn{
+    background-color: rgb(38, 23, 247);
+    margin-top: 50px;
+    margin-left: 50px;
 } 
-    
-    
     

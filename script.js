@@ -1,5 +1,8 @@
-
-
+// modal test!
+document.addEventListener('DOMContentLoaded', function() {
+    var modal1 = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(modal1);
+  });
 
   
   
