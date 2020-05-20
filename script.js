@@ -1,18 +1,12 @@
-$(function() {
-    $(window).scroll(function() {
-      var winTop = $(window).scrollTop();
-      if (winTop >= 30) {
-        $("body").addClass("sticky-shrinknav-wrapper");
-      } else{
-        $("body").removeClass("sticky-shrinknav-wrapper");
-      }
-    });
+// modal test!
+document.addEventListener('DOMContentLoaded', function() {
+    var modal1 = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(modal1);
   });
+
   
   
 //Back-end code playground kicks in here:
-
-
 
 $("#searchBtn").on("click", function (response){
   response.preventDefault();
@@ -76,4 +70,3 @@ $("#searchBtn").on("click", function (response){
   });
   
   }
-  
