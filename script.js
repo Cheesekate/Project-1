@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
 $("#searchBtn").on("click", function (response){
   response.preventDefault();
   const citypass = $("#searchbox").val(); //ID of the city entry box goes here.
-  const statepass = $("#statebox").val(); //ID of the state entry goes here. Generally appears to require full name, but also doens't seem to work 100%.
+  //const statepass = $("#statebox").val(); //ID of the state entry goes here. Generally appears to require full name, but also doens't seem to work 100%.
   var lat = 0;
   var lon = 0;
-  cityPull(citypass);
+  cityPull(citypass, statepass);
   });
   
   function cityPull(cityname, cityState){
@@ -36,7 +36,9 @@ $("#searchBtn").on("click", function (response){
       console.log(response);
       console.log(lat, lon);
       //this pastes the icon tag and temperature readout straight into a text tag by ID. 
-      $("#cityWeather").html("<img src='" + whicon + "' alt=' Projected weather icon'>" + temp.toFixed(0) + "°F");
+      console.log(whicon);
+      console.log(temp);
+      //$("#cityWeather").html("<img src='" + whicon + "' alt=' Projected weather icon'>" + temp.toFixed(0) + "°F");
       
       //This is the Ticketmaster call zone.
       
@@ -59,6 +61,7 @@ $("#searchBtn").on("click", function (response){
               console.log(response._embedded.events[i]._embedded.venues[0].name) //Name of venue
               console.log(response._embedded.events[i]._embedded.venues[0].address, response._embedded.events[i]._embedded.venues[0].city, response._embedded.events[0]._embedded.venues[0].state.name, response._embedded.events[i]._embedded.venues[0].postalCode) //street address, city, state, zip
               listarray.push(response._embedded.events[i].name); //Adds event to the list to avoid duplication
+              //Plug in the render/loop function here with relevant info - FUNCTION
               }
               else{
                   console.log("dupe"); //Lets us know a duplicate event name was skipped.
@@ -70,3 +73,4 @@ $("#searchBtn").on("click", function (response){
   });
   
   }
+
