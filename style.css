@@ -117,9 +117,15 @@ h2{
     margin-right: 0px;
     margin-left: 0px;
     margin-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 60px;
+    padding-right: 60px;
 }    
+
+.font-size {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 45px;
+    color: white;
+}
 
 .card-panel{
     background-color: black;
