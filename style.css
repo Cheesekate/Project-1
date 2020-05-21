@@ -64,7 +64,7 @@ h2{
     
     
 .rightCol{
-    height: 50vh; 
+    height: auto; 
     background-image: black;
     /* background-image: linear-gradient(to right, rgb(87, 240, 1), teal , rgb(38, 23, 247));   */
     opacity: .7;
@@ -106,7 +106,7 @@ h2{
 }
 
 .mainCol{
-    height: 20vh; 
+    height: auto; 
     background-color: black;
     opacity: .7;
     margin: 3rem;
