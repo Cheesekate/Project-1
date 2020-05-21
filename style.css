@@ -10,9 +10,9 @@ body, html{
 nav{
     background-color: black;
     opacity: .7;
+}    
     
-    
-}
+
 
 h2{
     margin-top: 0px;
@@ -49,11 +49,6 @@ h2{
 }    
 
 .leftCol {
-    /* height: 120px;  */
-    /* height: auto; change to auto when search button starts working */
-    /* border: solid black;  */
-    /* background-color: rgb(240, 81, 218); */
-    /* background-image: linear-gradient(to right, rgb(240, 81, 218), rgb(245, 236, 115) , teal); */
     background-image: url(https://media3.giphy.com/media/1kTUjHlD4SVf2lut1u/giphy.gif?cid=ecf05e47e82602752946d5c0a355aad3d978d72377fe3ee3&rid=giphy.gif);
     opacity: .7;
     margin: 0;
@@ -63,14 +58,14 @@ h2{
     margin-right: 0px;
     margin-bottom: 0;
     padding-left: 0px;
-    padding-right: 0px;
-    
+    padding-right: 0px;   
 }    
     
+    
+    
 .rightCol{
-    height: 84vh; 
-    /* border: solid black;  */
-     background-image: black;
+    height: 50vh; 
+    background-image: black;
     /* background-image: linear-gradient(to right, rgb(87, 240, 1), teal , rgb(38, 23, 247));   */
     opacity: .7;
     margin: 3rem;
@@ -81,10 +76,11 @@ h2{
     margin-bottom: 0px;
     padding-left: 0px;
     padding-right: 0px;
+    
 }    
 
 .pulse2{
-    background-color: rgb(64, 175, 69);
+    background-color: rgb(245, 236, 115);
     color: #000000;
 } 
 
@@ -107,5 +103,26 @@ h2{
     margin-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
+}
 
+.mainCol{
+    height: 20vh; 
+    background-color: black;
+    opacity: .7;
+    margin: 3rem;
+    border-radius: 10px;
+    padding: 3rem;
+    margin-top: 30px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}    
+
+.card-panel{
+    background-color: black;
+}
+
+.white-text{
+    font-size: 35px;
 }
