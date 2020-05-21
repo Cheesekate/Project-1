@@ -11,7 +11,10 @@ nav{
     background-color: black;
     opacity: .7;
 }    
-    
+   
+.modal {
+    border-radius: 10px;
+}
 
 
 h2{
@@ -133,4 +136,18 @@ h2{
 
 .white-text{
     font-size: 35px;
+}
+
+.x {
+    margin: 6px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.close-button {
+    border-radius: 10px;
+}
+
+para2 {
+    margin-bottom: 20px;
 }
