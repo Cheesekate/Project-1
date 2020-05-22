@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
   var modal1 = document.querySelectorAll(".modal");
   var instances = M.Modal.init(modal1);
 });
+var elemsTap = document.querySelector('.tap-target');
+    var instancesTap = M.TapTarget.init(elemsTap, {});
+             instancesTap.open()
+			  
+
 
 //Back-end code playground kicks in here:
 
