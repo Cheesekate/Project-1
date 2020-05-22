@@ -122,6 +122,7 @@ function eventPull(eventid) {
     method: "GET",
   }).then(function (response) {
     console.log(response);
+    console.log(response.name); //The name of the event.
     console.log(response.url); //The link to get tickets.
     console.log(response.dates.status.code); //Event status - This lets us know if it's been cancelled/delayed.
     console.log(response.images[0].url); //First event image
@@ -169,4 +170,14 @@ function eventPull(eventid) {
       //clicked.find(".renderedWeather").html("<img src='" + whicon + "' alt=' Projected weather icon'>" + temp.toFixed(0) + "°F");
     });
   });
+}
+
+function swapMenu(){
+  const className = $('.tap-target-wrapper');
+  if( className.hasClass("open")){
+    className.removeClass("open");
+  }
+  else{
+    className.addClass("open");
+  }
 }
