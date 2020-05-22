@@ -6,11 +6,15 @@ body, html{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-}   
+    background-attachment: fixed;
+  }   
+    
+   
 
 main {
     padding-bottom: 40px;
 }
+
  
 nav{
     background-color: black;
@@ -67,7 +71,8 @@ h2{
     margin-right: 0px;
     margin-bottom: 0;
     padding-left: 0px;
-    padding-right: 0px;   
+    padding-right: 0px;  
+    
 }    
     
     
@@ -85,7 +90,7 @@ h2{
     margin-bottom: 60px;
     padding-left: 0px;
     padding-right: 0px;
-    
+     
 }    
 
 .pulse2{
@@ -127,6 +132,7 @@ h2{
     margin-bottom: 0px;
     padding-left: 60px;
     padding-right: 60px;
+    
 }    
 
 .font-size {
