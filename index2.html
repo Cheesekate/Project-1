@@ -39,7 +39,7 @@
 <!-- css style sheet start -->
 <style>
 .parallax-container {
-      height: "1000px";
+      height: "1000";
     }
         
 
@@ -47,11 +47,18 @@
 
 </style>
 <!-- css style sheet end -->
+<!-- js file start -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var parallax = document.querySelectorAll('.parallax');
+  var instances = M.Parallax.init(parallax);
+});
 
 
+</script>
 
 
-
+<!-- js file end -->
 
 
 
@@ -68,6 +75,6 @@
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous"
   ></script>
-  <script type="text/javascript" src="script.js"></script>   
+  <!-- <script type="text/javascript" src="script.js"></script>    -->
 </body>
 </html>
