@@ -1,5 +1,9 @@
 var eventData = [];
 var map;
+setInterval(function () {
+  $(".leftCol").css("background-image", "url()");
+  $(".leftCol").css("background-color", "black");
+}, 4000);
 
 // modal test!
 document.addEventListener("DOMContentLoaded", function () {
