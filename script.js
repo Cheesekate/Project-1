@@ -171,3 +171,13 @@ function eventPull(eventid) {
     });
   });
 }
+
+function swapMenu(){
+  const className = $('.tap-target-wrapper');
+  if( className.hasClass("open")){
+    className.removeClass("open");
+  }
+  else{
+    className.addClass("open");
+  }
+}
