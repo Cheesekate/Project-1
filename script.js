@@ -16,8 +16,8 @@ $("#searchBtn").on("click", function (response) {
   const citypass = $("#searchbox").val(); //ID of the city entry box goes here.
   //const statepass = $("#statebox").val(); //ID of the state entry goes here. Generally appears to require full name, but also doens't seem to work 100%.
   //const daysout = $("#daysout").val(); //Time frame can go here, and we can use the moment.js functions to dynamically constrain the search.
-  var lat = 0;
-  var lon = 0;
+  $(".mainCol").css("display", "none");
+  $(".rightCol").css("display", "block");
   cityPull(citypass);
 });
 

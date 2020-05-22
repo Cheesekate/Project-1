@@ -1,7 +1,7 @@
 # Project-1
 
-Title:
-PoppIn!
+## Title: PoppIn!
+
 
 Project:
 With the current state of the Corona virus, we are trying to figure out what there is to do in your area and to find out what is PoppIn in your area and the weather.
@@ -21,7 +21,20 @@ For this project, Danny, Marcus, Logan and Kate will work collaborativilty to cr
 
 Our application will be created for mobile devices and desktop friendly, with three API functions, one for pulling events, a map API, and weather API.
 
-<img width="589" alt="Screen Shot 2020-05-18 at 1 49 38 PM" src="https://user-images.githubusercontent.com/64288538/82258312-79c88e00-990e-11ea-9902-b5697bbbb2ca.png">
+<br>
+<br>
+<br>
+<img width="600" src="images/screenShotLarge.PNG">
+<br>
+<br>
+<br>
+<br>
+<img width="400" src="images/screenShotSmall1.PNG">
+<br>
+<br>
+<br>
+<br>
+<img width="400" src="images/screenShotSmall2.PNG">
 
 
 
