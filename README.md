@@ -1,7 +1,7 @@
 # Project-1
 
 Title:
-##PoppIn!
+## PoppIn!
 
 Project:
 With the current state of the Corona virus, we are trying to figure out what there is to do in your area and to find out what is PoppIn in your area and the weather.
