@@ -7,7 +7,11 @@ var elemsTap = document.querySelector('.tap-target');
     var instancesTap = M.TapTarget.init(elemsTap, {});
              instancesTap.open()
 			  
-
+// parrallax jquery
+document.addEventListener('DOMContentLoaded', function() {
+  var parallax = document.querySelectorAll('.parallax');
+  var instances = M.Parallax.init(parallax);
+});
 
 //Back-end code playground kicks in here:
 
