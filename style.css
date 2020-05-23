@@ -166,3 +166,7 @@ para2 {
 .leftColMargin{
     margin-top: 15px;
 }
+
+.hidden{
+    display: none;
+}

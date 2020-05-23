@@ -36,5 +36,6 @@ Our application will be created for mobile devices and desktop friendly, with th
 <br>
 <img width="400" src="images/screenShotSmall2.PNG">
 
-
-
+# Contributors
+<br>
+## Kate, Danny, Logan, Marcus!

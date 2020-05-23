@@ -1,13 +1,40 @@
+var eventData = [];
+var map;
+setInterval(function () {
+  $(".leftCol").css("background-image", "url()");
+  $(".leftCol").css("background-color", "black");
+}, 4000);
+
 // modal test!
 document.addEventListener("DOMContentLoaded", function () {
   var modal1 = document.querySelectorAll(".modal");
-  var instances = M.Modal.init(modal1);
+  var instances = M.Modal.init(modal1, {
+    onOpenStart: function () {
+      const index = $(this._openingTrigger).attr("data-event-index");
+      const event = eventData[index];
+      console.log(event);
+      $("#modal-title").text(event.name);
+      $("#modal-info").text(event.info);
+      map.setCenter(
+        new google.maps.LatLng(
+          event.venue.location.coord.lat,
+          event.venue.location.coord.lon
+        )
+      );
+    },
+  });
 });
-var elemsTap = document.querySelector('.tap-target');
-    var instancesTap = M.TapTarget.init(elemsTap, {});
-             instancesTap.open()
-			  
 
+var elemsTap = document.querySelector(".tap-target");
+var instancesTap = M.TapTarget.init(elemsTap, {});
+instancesTap.open();
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
+  });
+}
 
 //Back-end code playground kicks in here:
 
@@ -16,6 +43,7 @@ $("#searchBtn").on("click", function (response) {
   const citypass = $("#searchbox").val(); //ID of the city entry box goes here.
   //const statepass = $("#statebox").val(); //ID of the state entry goes here. Generally appears to require full name, but also doens't seem to work 100%.
   //const daysout = $("#daysout").val(); //Time frame can go here, and we can use the moment.js functions to dynamically constrain the search.
+  $("#city-name").text(citypass);
   $(".mainCol").css("display", "none");
   $(".rightCol").css("display", "block");
   cityPull(citypass);
@@ -23,7 +51,6 @@ $("#searchBtn").on("click", function (response) {
 
 function cityPull(cityname) {
   //This is the initial Weathermap call zone.
-  var city = cityname;
   var APIKey = "c0708fd314d4abadfb6401261f72c41f";
   var queryURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -45,11 +72,6 @@ function cityPull(cityname) {
     lon = response.coord.lon;
     console.log(response);
     console.log(lat, lon);
-    //this pastes the icon tag and temperature readout straight into a text tag by ID.
-    console.log(whicon);
-    console.log(temp);
-    //$("#cityWeather").html("<img src='" + whicon + "' alt=' Projected weather icon'>" + temp.toFixed(0) + "°F");
-
     //This is the Ticketmaster call zone.
 
     APIKey = "qdZu7Y7hMt3KGPxrdiPLP6B4TNiFoYZC"; //Our API key. Can handle about a thousand searches a day.
@@ -71,26 +93,62 @@ function cityPull(cityname) {
       method: "GET",
     }).then(function (response) {
       console.log(queryURL);
-      console.log(response);
+      console.log("Response", response);
+      // clear out eventDate array
+      eventData.length = 0;
+
       var listarray = [];
-      console.log(listarray);
+      $("#events-list").empty();
       for (let i = 0; i < response.page.size; i++) {
-        if (listarray.includes(response._embedded.events[i].name) != true) {
-          console.log(response._embedded.events[i].name); //Name of event
-          console.log(response._embedded.events[0].dates.start.localDate); //Date of event;
-          console.log(response._embedded.events[i].images[0].url); //First image
-          console.log(response._embedded.events[i]._embedded.venues[0].name); //Name of venue
-          console.log(
-            response._embedded.events[i]._embedded.venues[0].address,
-            response._embedded.events[i]._embedded.venues[0].city,
-            response._embedded.events[0]._embedded.venues[0].state.name,
-            response._embedded.events[i]._embedded.venues[0].postalCode
-          ); //street address, city, state, zip
-          console.log(response._embedded.events[i].id); //This is the ID we will use to pull the detailed info later. Also useful to keep on the site proper.
-          listarray.push(response._embedded.events[i].name); //Adds event to the list to avoid duplication
+        if (listarray.includes(response._embedded.events[i].name) !== true) {
+          // Build event object for easier access to data
+          const event = {
+            id: response._embedded.events[i].id,
+            info: response._embedded.events[i].info,
+            name: response._embedded.events[i].name,
+            date: response._embedded.events[0].dates.start.localDate,
+            img: response._embedded.events[i].images[0].url,
+            venue: {
+              name: response._embedded.events[i]._embedded.venues[0].name,
+              location: {
+                coord: {
+                  lat:
+                    response._embedded.events[i]._embedded.venues[0].location
+                      .latitude,
+                  lon:
+                    response._embedded.events[i]._embedded.venues[0].location
+                      .longitude,
+                },
+                address:
+                  response._embedded.events[i]._embedded.venues[0].address,
+                city: response._embedded.events[i]._embedded.venues[0].city,
+                state:
+                  response._embedded.events[0]._embedded.venues[0].state.name,
+                postalCode:
+                  response._embedded.events[i]._embedded.venues[0].postalCode,
+              },
+            },
+          };
+
+          const $event = $("<div>").addClass("event");
+          const $modalBtn = $("<a>")
+            .attr("data-target", "modal1")
+            .attr("data-event-index", i)
+            .addClass("btn modal-trigger halfway-fab waves-effect waves-light")
+            .append($('<i class="material-icons black-text">location_on</i>'));
+
+          $event.append(
+            $("<h3>").text(event.name),
+            $("<p>").text(event.info),
+            $modalBtn
+          );
+          $("#events-list").append($event);
+
+          //This is the ID we will use to pull the detailed info later. Also useful to keep on the site proper.
+          //Adds event to the list to avoid duplication
+          listarray.push(event.name);
           //Plug in the render/loop function here with relevant info - FUNCTION
-        } else {
-          console.log("dupe"); //Lets us know a duplicate event name was skipped.
+          eventData.push(event);
         }
       }
     });
@@ -173,12 +231,11 @@ function eventPull(eventid) {
   });
 }
 
-function swapMenu(){
-  const className = $('.tap-target-wrapper');
-  if( className.hasClass("open")){
+function swapMenu() {
+  const className = $(".tap-target-wrapper");
+  if (className.hasClass("open")) {
     className.removeClass("open");
-  }
-  else{
+  } else {
     className.addClass("open");
   }
 }
