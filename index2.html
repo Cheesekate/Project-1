@@ -16,34 +16,66 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
   media="screen,projection"
 />
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 </head>
 <body>
+  <nav>
+    <div class="nav-wrapper">
+      <h2 class="center-align"><strong>What's Poppin!</strong></h2>
+    </div>
+  </nav>
+
     <!-- parallax container start -->
     <div class="parallax-container">
         <div class="parallax"><img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"></div>
       </div>
-      <div class="section white">
+      <div class="section black">
         <div class="row container">
-          <h2 class="header">Parallax</h2>
-          <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+          <div class="col s12 m12 l12 leftCol center-align" id="leftCol">
+            <div class="col s12 m4 input-field inputDiv">
+              <input class="input" id="searchbox" type="input" placeholder="Enter city here..."/>
+              <a class="btn-floating halfway-fab pulse" id="searchBtn" ><i class="material-icons black-text">search</i></a>
+            </div>
+            <div class="col s12 m4 white-text center-align leftColMargin">
+              <h2>Your City Here</h2>
+            </div>
+            <div class="col s12 m4 center-align leftColMargin">
+              <button class="white-text teal x">W</button>
+            </div>
+        </div>
         </div>
       </div>
       <div class="parallax-container">
         <div class="parallax"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"></div>
       </div>
     
+    
+       
+           
       <!-- parallax container end -->
 
 <!-- css style sheet start -->
 <style>
-.parallax-container {
-      height: "1000";
-    }
+     .parallax-container {
+       height: 600px;
+      }
+      
+      .nav-wrapper {
+        background-color: black;
         
+      }
+      
+      .nav{
+        position: fixed;
+        opacity: .7;
+        height: 100%;
+      }    
 
-
+h2 {
+    text-align: center;
+    margin-top: 0px;
+}
 
 </style>
 <!-- css style sheet end -->
