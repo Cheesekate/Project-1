@@ -92,8 +92,11 @@ function cityPull(cityname) {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      console.log(response);
-      console.log(response.page.totalElements);
+      console.log(queryURL);
+      console.log("Response", response);
+      // clear out eventDate array
+      eventData.length = 0;
+
       var listarray = [];
       $("#events-list").empty();
           if (response.page.totalElements == "0"){
