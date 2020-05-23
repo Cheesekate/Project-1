@@ -92,11 +92,17 @@ function cityPull(cityname) {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      console.log(queryURL);
       console.log(response);
+      console.log(response.page.totalElements);
       var listarray = [];
       $("#events-list").empty();
-      for (let i = 0; i < response.page.size; i++) {
+          if (response.page.totalElements == "0"){
+            console.log("We tried to make an exception.")
+            const errorEntryEl = $("<div>");
+            $("#events-list").append(errorEntryEl, $("<h3>").text("Sorry!"),$("<p>").text("Nothing's Poppin in your area."));
+            console.log("We reached the end of the exception bit.")
+          }
+      for (let i = 0; i < response.page.totalElements; i++) {
         if (listarray.includes(response._embedded.events[i].name) !== true) {
           // Build event object for easier access to data
           const event = {
