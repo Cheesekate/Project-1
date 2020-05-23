@@ -75,7 +75,11 @@ function cityPull(cityname) {
     //This is the Ticketmaster call zone.
 
     APIKey = "qdZu7Y7hMt3KGPxrdiPLP6B4TNiFoYZC"; //Our API key. Can handle about a thousand searches a day.
-    endDate = "2020-05-25T23:59:59Z"; //Format YYYY-MM-ddThh:mm:ssZ. Date set here is the last day included in the search. Hook moment.js to this to get a certain day from now, keep time as is.
+    const nowmoment = moment();
+    console.log(nowmoment)
+    const newEnd = moment(nowmoment).add(7, 'days');
+    console.log("varDate:" + moment(newEnd).format("YYYY-MM-DD") + "T23:59:59Z");
+    endDate = moment(newEnd).format("YYYY-MM-DD") + "T23:59:59Z"; //Format YYYY-MM-ddThh:mm:ssZ. Date set here is the last day included in the search. Hook moment.js to this to get a certain day from now, keep time as is.
     //For paramaters, this call takes lat, long, an end date for the search, and a radius in KM. Radius and end date are currently hardcoded.
     queryURL =
       "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&latlong=" +
