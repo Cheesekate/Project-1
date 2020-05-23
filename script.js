@@ -75,16 +75,16 @@ function cityPull(cityname) {
     //This is the Ticketmaster call zone.
 
     APIKey = "qdZu7Y7hMt3KGPxrdiPLP6B4TNiFoYZC"; //Our API key. Can handle about a thousand searches a day.
-    endDate = "2020-05-20T23:59:59Z"; //Format YYYY-MM-ddThh:mm:ssZ. Date set here is the last day included in the search. Hook moment.js to this to get a certain day from now, keep time as is.
+    endDate = "2020-05-25T23:59:59Z"; //Format YYYY-MM-ddThh:mm:ssZ. Date set here is the last day included in the search. Hook moment.js to this to get a certain day from now, keep time as is.
     //For paramaters, this call takes lat, long, an end date for the search, and a radius in KM. Radius and end date are currently hardcoded.
     queryURL =
-      "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&lat=" +
+      "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&latlong=" +
       lat +
-      "&long=" +
+      "," +
       lon +
       "&endDateTime=" +
       endDate +
-      "&radius=200" +
+      "&radius=20" +
       "&apikey=" +
       APIKey;
 
@@ -92,12 +92,20 @@ function cityPull(cityname) {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
+      console.log(queryURL);
       console.log("Response", response);
       // clear out eventDate array
       eventData.length = 0;
+
       var listarray = [];
       $("#events-list").empty();
-      for (let i = 0; i < response.page.size; i++) {
+          if (response.page.totalElements == "0"){
+            console.log("We tried to make an exception.")
+            const errorEntryEl = $("<div>");
+            $("#events-list").append(errorEntryEl, $("<h3>").text("Sorry!"),$("<p>").text("Nothing's Poppin in your area."));
+            console.log("We reached the end of the exception bit.")
+          }
+      for (let i = 0; i < response.page.totalElements; i++) {
         if (listarray.includes(response._embedded.events[i].name) !== true) {
           // Build event object for easier access to data
           const event = {
