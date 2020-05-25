@@ -38,4 +38,4 @@ Our application will be created for mobile devices and desktop friendly, with th
 
 # Contributors
 <br>
-## Kate, Danny, Logan, Marcus!
+Kate, Danny, Logan, Marcus!
