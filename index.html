@@ -23,6 +23,7 @@
       #map {
         height: 400px; /* The height is 400 pixels */
         width: 100%; /* The width is the width of the web page */
+        
       }
     </style>
   </head>
@@ -56,10 +57,10 @@
             >
           </div>
           <div class="col s12 m4 white-text center-align leftColMargin">
-            <h2>Your City Here</h2>
+            <h2 id="cityHeader">Your City Here</h2>
           </div>
           <div class="col s12 m4 center-align leftColMargin">
-            <button class="white-text teal x">W</button>
+            <span id="weatherSpan" class="white-text teal x">W</span>
           </div>
         </div>
         <!-- close input col -->
@@ -120,7 +121,7 @@
             >X</a
           >
           <div class="modal-content row">
-            <div class="col m6 center-align">
+            <div class="col m6 s12 center-align">
               <h4 class="eventHead" id="modal-title">Event Heading!</h4>
               <p class="para2" id="modal-info">
                 Description Lorem ipsum dolor sit amet consectetur adipisicing
@@ -130,7 +131,7 @@
                 ipsa?
               </p>
             </div>
-            <div class="col m6">
+            <div class="col m6 s12">
               <div id="map"></div>
             </div>
           </div>
