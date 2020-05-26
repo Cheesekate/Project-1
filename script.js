@@ -13,11 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const index = $(this._openingTrigger).attr("data-event-index");
       const event = eventData[index];
       console.log(event);
-      $("#modal-title").text(event.name);
-      $("#modal-date").text(event.date);
+      $("#modal-title").text(event.name + "\n");
+      $("#modal-date").text(event.date + "\n");
       $("#modal-image").attr("src", event.img);
       $("#modal-info").text("");
-      $("#modal-info").text(event.info);
+      $("#modal-info").text(event.info + "\n");
       map.setCenter(
         new google.maps.LatLng(
           event.venue.location.coord.lat,
@@ -110,12 +110,12 @@ function cityPull(cityname) {
 
       var listarray = [];
       $("#events-list").empty();
-          if (response.page.totalElements == "0"){
-            console.log("We tried to make an exception.")
-            const errorEntryEl = $("<div>");
-            $("#events-list").append(errorEntryEl, $("<h3>").text("Sorry!"),$("<p>").text("Nothing's Poppin in your area. Try again another day!"));
-            console.log("We reached the end of the exception bit.")
-          }
+      if (response.page.totalElements == "0") {
+        console.log("We tried to make an exception.")
+        const errorEntryEl = $("<div>");
+        $("#events-list").append(errorEntryEl, $("<h3>").text("Sorry!"), $("<p>").text("Nothing's Poppin in your area. Try again another day!"));
+        console.log("We reached the end of the exception bit.")
+      }
       for (let i = 0; i < response.page.totalElements; i++) {
         if (listarray.includes(response._embedded.events[i].name) !== true) {
           // Build event object for easier access to data
