@@ -1,94 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!--Import Google Icon Font-->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
-      rel="stylesheet"
-    />
-    <!--Import materialize.css-->
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-      media="screen,projection"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      #map {
-        height: 400px; /* The height is 400 pixels */
-        width: 100%; /* The width is the width of the web page */
-        
-      }
-    </style>
-  </head>
-  <body>
-    <nav>
-      <div class="nav-wrapper">
-        <h2 class="center-align"><strong>What's Poppin!</strong></h2>
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" media="screen,projection" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    #map {
+      height: 400px;
+      /* The height is 400 pixels */
+      width: 100%;
+      /* The width is the width of the web page */
+
+    }
+  </style>
+  <title>Whats Popping</title>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <h2 class="center-align"><strong>What's Poppin!</strong></h2>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- start header -->
+    <header class="row">
+      <div id="header"></div>
+    </header>
+    <!-- close header -->
+
+    <!-- start main -->
+    <div class="row">
+      <!-- start input col -->
+      <div class="col s12 m12 l12 leftCol center-align" id="leftCol">
+        <div class="col s12 m4 input-field inputDiv">
+          <input class="input" id="searchbox" type="input" placeholder="Enter city here..." />
+          <a class="btn-floating halfway-fab pulse" id="searchBtn"><i class="material-icons black-text">search</i></a>
+        </div>
+        <div class="col s12 m4 white-text center-align leftColMargin">
+          <h2 id="cityHeader"></h2>
+        </div>
+        <div class="col s12 m4 center-align leftColMargin">
+          <div id="weatherSpan" class="white-text teal x">
+            <div id="weatherIcon">
+              <p>Bla</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </nav>
+      <!-- close input col -->
 
-    <main class="container">
-      <!-- start header -->
-      <header class="row">
-        <div id="header"></div>
-      </header>
-      <!-- close header -->
+      <!-- start output col -->
+      <div class="col black s12 m12 l12 rightCol hidden" id="rightCol">
+        <div class="card z-depth-5">
+          <div class="content black-text">
+            <span class="card-title">Events in <span id="city-name"></span></span>
+            <div id="events-list">
+              <div class="event">
+                <h3><span class="date"></span></h3>
+                <p>
 
-      <!-- start main -->
-      <div class="row">
-        <!-- start input col -->
-        <div class="col s12 m12 l12 leftCol center-align" id="leftCol">
-          <div class="col s12 m4 input-field inputDiv">
-            <input
-              class="input"
-              id="searchbox"
-              type="input"
-              placeholder="Enter city here..."
-            />
-            <a class="btn-floating halfway-fab pulse" id="searchBtn"
-              ><i class="material-icons black-text">search</i></a
-            >
-          </div>
-          <div class="col s12 m4 white-text center-align leftColMargin">
-            <h2 id="cityHeader"></h2>
-          </div>
-          <div class="col s12 m4 center-align leftColMargin">
-            <div id="weatherSpan" class="white-text teal x">
-              <div id="weatherIcon">
-                <p>Bla</p>
+                </p>
+                <a data-target="modal1" class="btn modal-trigger halfway-fab waves-effect waves-light"><i
+                    class="material-icons black-text">location_on</i></a>
               </div>
             </div>
           </div>
         </div>
-        <!-- close input col -->
-
-        <!-- start output col -->
-        <div class="col black s12 m12 l12 rightCol hidden" id="rightCol">
-          <div class="card z-depth-5">
-            <div class="content black-text">
-              <span class="card-title"
-                >Events in <span id="city-name"></span
-              ></span>
-              <div id="events-list">
-                <div class="event">
-                  <h3><span class="date"></span></h3>
-                  <p>
-                    
-                  </p>
-                  <a data-target="modal1" class="btn modal-trigger halfway-fab waves-effect waves-light" ><i class="material-icons black-text">location_on</i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="col black s12 m12 l12 rightCol hidden" id="rightCol">
+      </div>
+      <!-- <div class="col black s12 m12 l12 rightCol hidden" id="rightCol">
           <div class="card z-depth-5">
             <div class="content black-text">
               <span class="card-title"
@@ -103,93 +90,75 @@
           </div>
         </div> -->
 
-        <div class="col s12 m12 l12 mainCol">
-          <div class="center-align">
-            <p class="font-size para1 white-text">
-              Hey Everybody and welcome to Whats Poppin! The site that will help
-              manage being bored in the house and keep you posted on what's
-              going on in your city!
-            </p>
-          </div>
-        </div>
-
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-          <a
-            href="#!"
-            class="modal-close waves-effect waves-green btn-flat teal x"
-            >X</a
-          >
-          <div class="modal-content row">
-            <div class="col m6 s12 center-align">
-              <h4 class="eventHead" id="modal-title">Event Heading!</h4>
-              <p class="para2" id="modal-date"></p>
-              <img class="responsive-img" id = "modal-image" src = "#">
-              <p class="para2" id="modal-info">
-                Description Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Eos, fugiat recusandae aut accusamus culpa dolores
-                obcaecati totam accusantium illum nulla cumque inventore
-                quibusdam tempora similique voluptates nemo nostrum impedit
-                ipsa?
-              </p>
-            </div>
-            <div class="col m6 s12">
-              <div id="map"></div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <a
-              href="#!"
-              class="modal-close waves-effect waves-green btn-flat teal close-button"
-              >Close</a
-            >
-          </div>
-        </div>
-        <!-- close output col -->
-      </div>
-
-      <!-- Element Showed -->
-
-      <!-- Tap Target Structure -->
-      <div class="fixed-action-btn">
-        <a
-          id="menu"
-          class="btn-floating btn-large red"
-          onclick="swapMenu()"
-          href="#"
-        >
-          <i class="large material-icons">cloud</i>
-        </a>
-      </div>
-      <div class="tap-target" data-target="menu">
-        <div class="tap-target-content">
-          <h5 class="white-text"></h5>
-          <p class="white-text right-align">
-            Just type your city in and see what's poppIn!
+      <div class="col s12 m12 l12 mainCol">
+        <div class="center-align">
+          <p class="font-size para1 white-text">
+            Hey Everybody and welcome to Whats Poppin! The site that will help
+            manage being bored in the house and keep you posted on what's
+            going on in your city!
           </p>
         </div>
       </div>
 
-      <!-- close main -->
-    </main>
-
-    <div class="ftr" id="ftr">
-      <p>&copy; 2020 What's PoppIn!</p>
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat teal x">X</a>
+        <div class="modal-content row">
+          <div class="col m6 s12 center-align">
+            <h4 class="eventHead" id="modal-title">Event Heading!</h4>
+            <p class="para2" id="modal-date"></p>
+            <img class="responsive-img" id="modal-image" src="#">
+            <p class="para2" id="modal-info">
+              Description Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Eos, fugiat recusandae aut accusamus culpa dolores
+              obcaecati totam accusantium illum nulla cumque inventore
+              quibusdam tempora similique voluptates nemo nostrum impedit
+              ipsa?
+            </p>
+          </div>
+          <div class="col m6 s12">
+            <div id="map"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat teal close-button">Close</a>
+        </div>
+      </div>
+      <!-- close output col -->
     </div>
 
-    <!--JavaScript at end of body for optimized loading-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBARLV8jQzoBjIB3xzQ2GjjlM6FnSedWTY&callback=initMap"
-    ></script>
-  </body>
+    <!-- Element Showed -->
+
+    <!-- Tap Target Structure -->
+    <div class="fixed-action-btn">
+      <a id="menu" class="btn-floating btn-large red" onclick="swapMenu()" href="#">
+        <i class="large material-icons">cloud</i>
+      </a>
+    </div>
+    <div class="tap-target" data-target="menu">
+      <div class="tap-target-content">
+        <h5 class="white-text"></h5>
+        <p class="white-text right-align">
+          Just type your city in and see what's poppIn!
+        </p>
+      </div>
+    </div>
+
+    <!-- close main -->
+  </main>
+
+  <div class="ftr" id="ftr">
+    <p>&copy; 2020 What's PoppIn!</p>
+  </div>
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBARLV8jQzoBjIB3xzQ2GjjlM6FnSedWTY&callback=initMap"></script>
+</body>
+
 </html>
