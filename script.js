@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const event = eventData[index];
       console.log(event);
       $("#modal-title").text(event.name);
+      $("#modal-date").text(event.date);
+      $("#modal-image").attr("src", event.img);
       $("#modal-info").text(event.info);
       map.setCenter(
         new google.maps.LatLng(
@@ -175,72 +177,78 @@ $(".renderedTitle").on("click", function (response) {
   //eventPull(eventpass);
 });
 
-function eventPull(eventid) {
-  //This is the second Ticketmaster call zone, this time for a specific event.
-  var APIKey = "qdZu7Y7hMt3KGPxrdiPLP6B4TNiFoYZC";
-  var queryURL =
-    "https://app.ticketmaster.com/discovery/v2/events/" +
-    eventid +
-    ".json?apikey=" +
-    APIKey;
-  var lat = 0;
-  var lon = 0;
-  var weatherDate = "";
-  console.log(queryURL);
-  $.ajax({
-    url: queryURL,
-    method: "GET",
-  }).then(function (response) {
-    console.log(response);
-    console.log(response.name); //The name of the event.
-    console.log(response.url); //The link to get tickets.
-    console.log(response.dates.status.code); //Event status - This lets us know if it's been cancelled/delayed.
-    console.log(response.images[0].url); //First event image
-    console.log(response._embedded.venues[0].address); //Street address
-    lat = response._embedded.venues[0].location.latitude; // This will be the lat/long for our second weather call.
-    lon = response._embedded.venues[0].location.longitude;
+//This is more or less unncessary.
+// function eventPull(eventid) {
+//   //This is the second Ticketmaster call zone, this time for a specific event.
+//   var APIKey = "qdZu7Y7hMt3KGPxrdiPLP6B4TNiFoYZC";
+//   var queryURL =
+//     "https://app.ticketmaster.com/discovery/v2/events/" +
+//     eventid +
+//     ".json?apikey=" +
+//     APIKey;
+//   var lat = 0;
+//   var lon = 0;
+//   var weatherDate = "";
+//   console.log(queryURL);
+//   $.ajax({
+//     url: queryURL,
+//     method: "GET",
+//   }).then(function (response) {
+//     console.log(response);
+//     console.log(response.name); //The name of the event.
+//     console.log(response.url); //The link to get tickets.
+//     console.log(response.dates.status.code); //Event status - This lets us know if it's been cancelled/delayed.
+//     console.log(response.images[0].url); //First event image
+//     console.log(response._embedded.venues[0].address); //Street address
+//     lat = response._embedded.venues[0].location.latitude; // This will be the lat/long for our second weather call.
+//     lon = response._embedded.venues[0].location.longitude;
 
-    if (response.dates.start.noSpecificTime == true) {
-      console.log("N/A"); //Output this to the time spot.
-    } else {
-      var hour = response.dates.start.localTime.split(":")[0];
-      var minute = response.dates.start.localTime.split(":")[1];
-      if (hour > 12) {
-        hour = hour - 12 + ":" + minute + "PM";
-      } else {
-        hour = hour + ":" + minute + " AM";
-      }
-      console.log("Time: " + hour); //Event start time, translated to AM/PM
-    }
-    console.log("The date is" + response.dates.start.localDate); //Re-call may not be necessary.
+//     if (response.dates.start.noSpecificTime == true) {
+//       console.log("N/A"); //Output this to the time spot.
+//     } else {
+//       var hour = response.dates.start.localTime.split(":")[0];
+//       var minute = response.dates.start.localTime.split(":")[1];
+//       if (hour > 12) {
+//         hour = hour - 12 + ":" + minute + "PM";
+//       } else {
+//         hour = hour + ":" + minute + " AM";
+//       }
+//       console.log("Time: " + hour); //Event start time, translated to AM/PM
+//     }
+//     console.log("The date is" + response.dates.start.localDate); //Re-call may not be necessary.
+//   });
+// }
 
-    //This is the second Weathermap call zone, for weather at the event location and day.
-    APIKey = "c0708fd314d4abadfb6401261f72c41f";
-    queryURL =
-      "https://api.openweathermap.org/data/2.5/onecall?lat=" +
-      lat +
-      "&lon=" +
-      lon +
-      "&units=imperial&appid=" +
-      APIKey;
+// function localWeather(eventLat, eventLon){
+// //This is the second Weathermap call zone, for weather at the event location and day.
+// APIKey = "c0708fd314d4abadfb6401261f72c41f";
+// queryURL =
+//   "https://api.openweathermap.org/data/2.5/onecall?lat=" +
+//   eventLat +
+//   "&lon=" +
+//   eventLon +
+//   "&units=imperial&appid=" +
+//   APIKey;
 
-    $.ajax({
-      url: queryURL,
-      method: "GET",
-    }).then(function (response) {
-      const dayIndex = dayDifference - 1;
-      const whicon =
-        "http://openweathermap.org/img/w/" +
-        response.daily[dayIndex].weather[dayIndex].icon +
-        ".png"; //gets our weather icon
-      const temp = response.daily[dayIndex].temp.max;
-      console.log(response);
-      console.log(whicon);
-      console.log(temp.toFixed(0));
-      //clicked.find(".renderedWeather").html("<img src='" + whicon + "' alt=' Projected weather icon'>" + temp.toFixed(0) + "°F");
-    });
-  });
-}
+// $.ajax({
+//   url: queryURL,
+//   method: "GET",
+// }).then(function (response) {
+//   const dayIndex = //this needs to be defined to work.
+//   const whicon =
+//     "http://openweathermap.org/img/w/" +
+//     response.daily[dayIndex].weather[dayIndex].icon +
+//     ".png"; //gets our weather icon
+//   const temp = response.daily[dayIndex].temp.max;
+//   console.log(response);
+//   console.log(whicon);
+//   console.log(temp.toFixed(0));
+//   //clicked.find(".renderedWeather").html("<img src='" + whicon + "' alt=' Projected weather icon'>" + temp.toFixed(0) + "°F");
+//   console.log("<img src='" + whicon + "' alt=' Projected weather icon'>" + temp.toFixed(0) + "°F");
+//   return("<img src='" + whicon + "' alt=' Projected weather icon'>" + temp.toFixed(0) + "°F");
+
+// });
+// }
 
 function swapMenu() {
   const className = $(".tap-target-wrapper");
