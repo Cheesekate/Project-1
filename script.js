@@ -70,11 +70,12 @@ function cityPull(cityname) {
     const whicon =
       "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png"; //gets our weather icon
     const temp = response.main.temp;
-    $("#weatherSpan").html(temp + "<img src='" + whicon +"' alt = 'City weather icon'>");
+    $("#weatherSpan").html(temp.toFixed(0) + " F <img src='" + whicon +"' alt = 'City weather icon'>");
     lat = response.coord.lat;
     lon = response.coord.lon;
     console.log(response);
     console.log(lat, lon);
+    $("#cityHeader").text(cityname);
     //This is the Ticketmaster call zone.
 
     APIKey = "qdZu7Y7hMt3KGPxrdiPLP6B4TNiFoYZC"; //Our API key. Can handle about a thousand searches a day.
