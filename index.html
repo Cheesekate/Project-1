@@ -57,10 +57,12 @@
             >
           </div>
           <div class="col s12 m4 white-text center-align leftColMargin">
-            <h2 id="cityHeader">Your City Here</h2>
+            <h2 id="cityHeader"></h2>
           </div>
           <div class="col s12 m4 center-align leftColMargin">
-            <span id="weatherSpan" class="white-text teal x">W</span>
+            <div id="weatherSpan" class="white-text teal x">
+              <div id="weatherIcon"></div>
+            </div>
           </div>
         </div>
         <!-- close input col -->
@@ -78,11 +80,7 @@
                   <p>
                     
                   </p>
-                  <a
-                    data-target="modal1"
-                    class="btn modal-trigger halfway-fab waves-effect waves-light"
-                    ><i class="material-icons black-text">location_on</i></a
-                  >
+                  <a data-target="modal1" class="btn modal-trigger halfway-fab waves-effect waves-light" ><i class="material-icons black-text">location_on</i></a>
                 </div>
               </div>
             </div>
@@ -106,7 +104,7 @@
         <div class="col s12 m12 l12 mainCol">
           <div class="center-align">
             <p class="font-size para1 white-text">
-              Hey Errr'body and welcome to Whats Poppin! The site that will help
+              Hey Everybody and welcome to Whats Poppin! The site that will help
               manage being bored in the house and keep you posted on what's
               going on in your city!
             </p>
@@ -124,7 +122,7 @@
             <div class="col m6 s12 center-align">
               <h4 class="eventHead" id="modal-title">Event Heading!</h4>
               <p class="para2" id="modal-date"></p>
-              <img id = "modal-image" src = "#">
+              <img class="responsive-img" id = "modal-image" src = "#">
               <p class="para2" id="modal-info">
                 Description Lorem ipsum dolor sit amet consectetur adipisicing
                 elit. Eos, fugiat recusandae aut accusamus culpa dolores
@@ -165,7 +163,7 @@
         <div class="tap-target-content">
           <h5 class="white-text"></h5>
           <p class="white-text right-align">
-            Get out of the house and lets start having fun!!!
+            Just type your city in and see what's poppIn!
           </p>
         </div>
       </div>
