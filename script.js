@@ -68,7 +68,7 @@ function cityPull(cityname) {
     const whicon =
       "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png"; //gets our weather icon
     const temp = response.main.temp;
-    $("#weatherSpan").innerhtml = temp + "<img src='" + whicon +"' alt = 'City weather icon'>";
+    $("#weatherSpan").html(temp + "<img src='" + whicon +"' alt = 'City weather icon'>");
     lat = response.coord.lat;
     lon = response.coord.lon;
     console.log(response);
