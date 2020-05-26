@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       $("#modal-title").text(event.name);
       $("#modal-date").text(event.date);
       $("#modal-image").attr("src", event.img);
+      $("#modal-info").text("");
       $("#modal-info").text(event.info);
       map.setCenter(
         new google.maps.LatLng(
@@ -70,7 +71,8 @@ function cityPull(cityname) {
     const whicon =
       "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png"; //gets our weather icon
     const temp = response.main.temp;
-    $("#weatherSpan").html(temp.toFixed(0) + " F <img src='" + whicon +"' alt = 'City weather icon'>");
+    $("#weatherSpan").html(temp.toFixed(0) + " F");
+    $("#weatherIcon").html("<img src='" + whicon +"' alt = 'City weather icon'>");
     lat = response.coord.lat;
     lon = response.coord.lon;
     console.log(response);
