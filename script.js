@@ -68,6 +68,7 @@ function cityPull(cityname) {
     const whicon =
       "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png"; //gets our weather icon
     const temp = response.main.temp;
+    $("#weatherSpan").innerhtml = temp + "<img src='" + whicon +"' alt = 'City weather icon'>";
     lat = response.coord.lat;
     lon = response.coord.lon;
     console.log(response);
@@ -106,7 +107,7 @@ function cityPull(cityname) {
           if (response.page.totalElements == "0"){
             console.log("We tried to make an exception.")
             const errorEntryEl = $("<div>");
-            $("#events-list").append(errorEntryEl, $("<h3>").text("Sorry!"),$("<p>").text("Nothing's Poppin in your area."));
+            $("#events-list").append(errorEntryEl, $("<h3>").text("Sorry!"),$("<p>").text("Nothing's Poppin in your area. Try again another day!"));
             console.log("We reached the end of the exception bit.")
           }
       for (let i = 0; i < response.page.totalElements; i++) {
@@ -116,7 +117,7 @@ function cityPull(cityname) {
             id: response._embedded.events[i].id,
             info: response._embedded.events[i].info,
             name: response._embedded.events[i].name,
-            date: response._embedded.events[0].dates.start.localDate,
+            date: response._embedded.events[i].dates.start.localDate,
             img: response._embedded.events[i].images[0].url,
             venue: {
               name: response._embedded.events[i]._embedded.venues[0].name,
@@ -133,7 +134,7 @@ function cityPull(cityname) {
                   response._embedded.events[i]._embedded.venues[0].address,
                 city: response._embedded.events[i]._embedded.venues[0].city,
                 state:
-                  response._embedded.events[0]._embedded.venues[0].state.name,
+                  response._embedded.events[i]._embedded.venues[0].state.name,
                 postalCode:
                   response._embedded.events[i]._embedded.venues[0].postalCode,
               },
@@ -211,7 +212,7 @@ function eventPull(eventid) {
       }
       console.log("Time: " + hour); //Event start time, translated to AM/PM
     }
-    console.log(response.dates.start.localDate); //Re-call may not be necessary.
+    console.log("The date is" + response.dates.start.localDate); //Re-call may not be necessary.
 
     //This is the second Weathermap call zone, for weather at the event location and day.
     APIKey = "c0708fd314d4abadfb6401261f72c41f";
