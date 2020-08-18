@@ -21,6 +21,8 @@ For this project, Danny, Marcus, Logan and Kate will work collaborativilty to cr
 
 Our application will be created for mobile devices and desktop friendly, with three API functions, one for pulling events, a map API, and weather API.
 
+Check it out here: https://cheesekate.github.io/Project-1/
+
 <br>
 <br>
 <br>
